@@ -1,23 +1,16 @@
+/* eslint-disable */
+
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import DisplayArea from '../views/DisplayArea.vue'
+import tree from '../components/data_anaylsis/InputTree.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: Home
-  },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
+  { path: '/', redirect: '/displayarea' },
+  { path: '/displayarea', component: DisplayArea },
+  { path: '/tree', component: tree }
 ]
 
 const router = new VueRouter({
